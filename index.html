@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+  
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,18 +8,41 @@
     <title>JS Build with Gulp and SASS</title>
     <meta name="description" content="JavaScript Build Automation With Gulp and SASS Architecture">
   </head>
+  
   <body>
     <h1>JS Build with Gulp and SASS</h1>
-	<h2>Goals</h2>
-	<ul>
-		<li>Learn about Gulp, following the Pluralsight course "JavaScript Build Automation With Gulp.js"</li>
-		<li>Bundle JavaScript</li>
-		<li>Minify JavaScript</li>
-		<li>Bundle Vanilla CSS</li>
-		<li>Minify Vanilla CSS</li>
-		<li>Compile SASS to CSS</li>
-    <li>Include Foundation and Font Awesome, set it up (SASS and JS)</li>
-    <li>Tie it all together with Gulp</li>
-	</ul>
+    <h2>Goals</h2>
+    <ul>
+      <li>Learn about Gulp, following the Pluralsight course "JavaScript Build Automation With Gulp.js"</li>
+      <li>Bundle JavaScript</li>
+      <li>Minify JavaScript</li>
+      <li>Bundle Vanilla CSS</li>
+      <li>Minify Vanilla CSS</li>
+      <li>Compile SASS to CSS</li>
+      <li>Include Foundation and Font Awesome, set it up (SASS and JS)</li>
+      <li>Tie it all together with Gulp</li>
+    </ul>
+    <h3>Overview of Gulp API</h3>
+    <h4>gulp.task</h4>
+    <div>
+      <p>Define the unique name for the task and a function to execute when task is run. If the task has dependencies, those will be handled (run in parallel) to aid the task.</p>
+      <code>gulp.task('name', [dependencies], function)</code>
+    </div>
+    <h4>gulp.src</h4>
+    <div>
+      <p>The first argument is called "glob" and is the path to the source files.</p>
+      <code>return gulp.src('./file/path/**/*.js', [options])</code>
+    </div>
+    <h4>gulp.dest</h4>
+    <p>To where do we write the file(s) when done.</p>
+    <div>
+      <code>return gulp.pipe(gulp.dest('./build/', [options]))</code>
+    </div>
+    <h4>gulp.watch</h4>
+    <p>Watch files and run a series of tasks (defined in an array) when any of those files changes. Alternative can switch the array for a callback function (that gets an event argument)</p>
+    <div>
+      <code>gulp.watch('./file/path/**/*.js', [options], ['task01', 'task02'])</code>
+    </div>
   </body>
+
 </html>
