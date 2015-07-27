@@ -25,7 +25,8 @@
     <h3>Overview of Gulp API</h3>
     <h4>gulp.task</h4>
     <div>
-      <p>Define the unique name for the task and a function to execute when task is run. If the task has dependencies, those will be handled (run in parallel) to aid the task.</p>
+      <p>Define the unique name for the task and a function to execute when task is run. If the task has dependencies, those will
+        be handled (run in parallel) to aid the task.</p>
       <code>gulp.task('name', [dependencies], function)</code>
     </div>
     <h4>gulp.src</h4>
@@ -39,7 +40,8 @@
       <code>return gulp.pipe(gulp.dest('./build/', [options]))</code>
     </div>
     <h4>gulp.watch</h4>
-    <p>Watch files and run a series of tasks (defined in an array) when any of those files changes. Alternative can switch the array for a callback function (that gets an event argument)</p>
+    <p>Watch files and run a series of tasks (defined in an array) when any of those files changes. Alternative can switch the
+      array for a callback function (that gets an event argument)</p>
     <div>
       <code>gulp.watch('./file/path/**/*.js', [options], ['task01', 'task02'])</code>
     </div>
