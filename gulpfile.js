@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var size = require('gulp-filesize');
 
 
 gulp.task('hello-world', function(){
@@ -9,7 +8,13 @@ gulp.task('hello-world', function(){
 });
 
 gulp.task('js', function() {
-  return gulp.src(['./js/src/jsfile01.js', './js/src/jsfile02.js'])
-    .pipe(concat('app.js'))
+  return gulp
+  	.src([
+		  './js/src/jsfile01.js', 
+		  './js/src/jsfile02.js'
+		 ])
+	.pipe(concat('app.js'))
+	.pipe(gulp.dest('./js/bld/'))
+	.pipe(uglify())
     .pipe(gulp.dest('./js/bld/'));
 });
