@@ -3,6 +3,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var gulpif = require('gulp-if');
 
 
 var jsAppSrc = [
@@ -21,35 +22,37 @@ var sassSrcWatch = './sass/src/**/*.scss';
 var jsBld = './js/bld/';
 var sassBld = './sass/bld/';
 
+var isDev = true;
+
 
 gulp.task('js-app', function () {
 	return gulp
 		.src(jsAppSrc)
-		.pipe(sourcemaps.init())
+		.pipe(gulpif(isDev, sourcemaps.init()))
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest(jsBld))
 		.pipe(uglify())
-		.pipe(sourcemaps.write())
+		.pipe(gulpif(isDev, sourcemaps.write()))
 		.pipe(gulp.dest(jsBld));
 });
 
 gulp.task('js-lib', function () {
 	return gulp
 		.src(jsLibSrc)
-		.pipe(sourcemaps.init())
+		.pipe(gulpif(isDev, sourcemaps.init()))
 		.pipe(concat('lib.js'))
 		.pipe(gulp.dest(jsBld))
 		.pipe(uglify())
-		.pipe(sourcemaps.write())
+		.pipe(gulpif(isDev, sourcemaps.write()))
 		.pipe(gulp.dest(jsBld));
 });
 
 gulp.task('sass', function () {
 	return gulp
 		.src(sassSrc)
-		.pipe(sourcemaps.init())
+		.pipe(gulpif(isDev, sourcemaps.init()))
 		.pipe(sass({ outputStyle: 'compressed' }))
-		.pipe(sourcemaps.write())
+		.pipe(gulpif(isDev, sourcemaps.write()))
 		.pipe(gulp.dest(sassBld));
 });
 
@@ -63,4 +66,5 @@ gulp.task('sass-app-watcher', function(){
 });
 
 
-gulp.task('default', ['js-app', 'js-lib', 'sass', 'js-app-watcher', 'sass-app-watcher']);
+gulp.task('default', ['js-app', 'js-lib', 'sass']);
+gulp.task('watch', ['js-app', 'js-lib', 'sass', 'js-app-watcher', 'sass-app-watcher']);
