@@ -1,3 +1,6 @@
+var isDev = true;
+
+
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -22,7 +25,6 @@ var sassSrcWatch = './sass/src/**/*.scss';
 var jsBld = './js/bld/';
 var sassBld = './sass/bld/';
 
-var isDev = true;
 
 
 gulp.task('js-app', function () {
