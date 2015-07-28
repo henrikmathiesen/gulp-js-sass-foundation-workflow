@@ -1,3 +1,4 @@
+/* global FastClick */
 /// <reference path="../../typings/jquery/jquery.d.ts"/>
 (function(){
 	
@@ -18,9 +19,5 @@
 	// est aliquam at. Donec vel ante ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec congue varius purus ac
 	
 	console.log('Hello from js file 02');
-	
-	$('h1').on('click', function(){
-		alert('yes');
-	});
 	
 })();

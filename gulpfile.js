@@ -2,13 +2,8 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
-var minifyCss = require('gulp-minify-css');
 var sourcemaps = require('gulp-sourcemaps');
 
-
-gulp.task('hello-world', function () {
-	console.log('Our very first Gulp task!');
-});
 
 gulp.task('js-app', function () {
 	return gulp
@@ -39,5 +34,14 @@ gulp.task('js-lib', function () {
 		.pipe(gulp.dest('./js/bld/'));
 });
 
+gulp.task('sass', function () {
+	return gulp
+		.src('./sass/src/app.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass({outputStyle: 'compressed'}))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('./sass/bld/'));
+});
 
-gulp.task('default', ['js-app', 'js-lib']);
+
+gulp.task('default', ['js-app', 'js-lib', 'sass']);
