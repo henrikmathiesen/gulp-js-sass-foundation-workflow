@@ -18,6 +18,6 @@
 	// Praesent vitae felis ut nulla pharetra viverra. Donec volutpat efficitur odio et auctor. Sed consequat hendrerit dolor, sed ultrices 
 	// est aliquam at. Donec vel ante ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec congue varius purus ac
 	
-	console.log('Hello from js file 02!');
+	console.log('Hello from js file 02');
 	
 })();

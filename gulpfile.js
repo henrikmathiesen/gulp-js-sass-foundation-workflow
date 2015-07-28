@@ -29,6 +29,15 @@ var jsBld = './js/bld/';
 var sassBld = './sass/bld/';
 
 
+var injectToHtml = function () {
+	var target = gulp.src('./index.html');
+	var sources = gulp.src([jsBld + 'lib*.js', jsBld + 'app*.js', sassBld + 'app*.css'], { read: false });
+
+	return target.pipe(inject(sources))
+		.pipe(gulp.dest('./'));
+};
+
+
 
 gulp.task('js-app', function () {
 	return gulp
@@ -36,7 +45,7 @@ gulp.task('js-app', function () {
 		.pipe(gulpif(isDev, sourcemaps.init()))
 		.pipe(concat('app.js'))
 		.pipe(uglify())
-		.pipe(rev())
+		.pipe(gulpif(!isDev, rev()))
 		.pipe(gulpif(isDev, sourcemaps.write()))
 		.pipe(gulp.dest(jsBld));
 });
@@ -47,7 +56,7 @@ gulp.task('js-lib', function () {
 		.pipe(gulpif(isDev, sourcemaps.init()))
 		.pipe(concat('lib.js'))
 		.pipe(uglify())
-		.pipe(rev())
+		.pipe(gulpif(!isDev, rev()))
 		.pipe(gulpif(isDev, sourcemaps.write()))
 		.pipe(gulp.dest(jsBld));
 });
@@ -57,7 +66,7 @@ gulp.task('sass', function () {
 		.src(sassSrc)
 		.pipe(gulpif(isDev, sourcemaps.init()))
 		.pipe(sass({ outputStyle: 'compressed' })).on('error', console.log)
-		.pipe(rev())
+		.pipe(gulpif(!isDev, rev()))
 		.pipe(gulpif(isDev, sourcemaps.write()))
 		.pipe(gulp.dest(sassBld));
 });
@@ -78,11 +87,15 @@ gulp.task('sass-app-watcher', function () {
 
 
 gulp.task('default', ['clean-build-folders', 'js-app', 'js-lib', 'sass'], function () {
-	var target = gulp.src('./index.html');
-	var sources = gulp.src([jsBld + 'lib-*.js', jsBld + 'app-*.js', sassBld + 'app-*.css'], { read: false });
+	// If we are in dev environment we do not revision js and css files, so do not need to modify html file
+	if(isDev) { return; }
+	injectToHtml();
+});
 
-	return target.pipe(inject(sources))
-		.pipe(gulp.dest('./'));
+gulp.task('reset-to-dev', ['clean-build-folders', 'js-app', 'js-lib', 'sass'], function () {
+	// If isDev is true, after a !isDev build, we need to reset html file with non revisioned file references
+	// Then we can keep running the small watch jobs that only keeps overwriting the non revisioned files
+	injectToHtml();
 });
 
 
