@@ -1,11 +1,11 @@
 // Settings
 
-@import "_gs-settings";
+@import '_gs-settings';
 
 
 // Lib
 
-@import "../../bower_components/foundation/scss/normalize.scss";
+@import '../../bower_components/foundation/scss/normalize.scss';
 
 @import '../../bower_components/foundation/scss/foundation/components/grid';
 @import '../../bower_components/foundation/scss/foundation/components/accordion';
@@ -45,10 +45,10 @@
 @import '../../bower_components/foundation/scss/foundation/components/offcanvas';
 @import '../../bower_components/foundation/scss/foundation/components/visibility';
 
-@import "../../bower_components/fontawesome/scss/font-awesome.scss";
+@import '../../bower_components/fontawesome/scss/font-awesome.scss';
 
 
 // App
 
-@import "_gs-mixins";
-@import "_gs-type";
+@import '_gs-mixins';
+@import '_gs-type';
