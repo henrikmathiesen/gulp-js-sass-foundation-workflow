@@ -1,1 +1,39 @@
+@import '../../bower_components/foundation/scss/foundation/functions';
+
+// PROJECT X SETTINGS
+
+// Colors
+// $gs-brandcolor-white: #FFFFFF;
+// $gs-brandcolor-red: #FF0000;
+
+// Fonts
+// $gs-brand-font: 'Ubuntu', sans-serif;
+// $gs-brand-font-light:300;
+// $gs-brand-font-normal:400;
+// $gs-brand-font-medium:500;
+
+
+// FOUNDATION SETTINGS
+
+// Modify so iPad portrait (medium) and iPad landscape (large) are in different ranges)
+// $small-breakpoint:  em-calc(640);
+// $medium-breakpoint: em-calc(1024);
+// $large-breakpoint:  em-calc(1440);
+// $xlarge-breakpoint: em-calc(1920);
+
+
+// FONT AWESOME SETTING
+
 $fa-font-path: "../../bower_components/fontawesome/fonts/";
+
+
+// HELPER DOCUMENTATION
+
+// Foundation helper classes for showing and hiding content based on Media Query
+// .show-for-medium-up          // This text is shown on medium screens and up
+// .show-for-medium-only        // This text is shown only on a medium screen
+// .show-for-large-up           // This text is shown on large screens and up
+// .show-for-large-only         // This text is shown only on a large screen
+// .show-for-xlarge-up          // This text is shown on xlarge screens and up
+// .show-for-xlarge-only        // This text is shown only on an xlarge screen
+// .show-for-xxlarge-up         // This text is shown on xxlarge screens and up
