@@ -1,0 +1,8 @@
+@mixin tff-main-menu-item-with-icon($icomoonLetter){
+    &:before {
+            content: "#{$icomoonLetter}";
+        }
+}
+
+// Use mixin
+@include tff-main-menu-item-with-icon(d);
