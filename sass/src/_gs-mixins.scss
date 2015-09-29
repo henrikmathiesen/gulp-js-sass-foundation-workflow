@@ -1,8 +1,10 @@
-@mixin tff-main-menu-item-with-icon($icomoonLetter){
-    &:before {
-            content: "#{$icomoonLetter}";
-        }
-}
+// EXAMPLE OF MIXIN AND USAGE (THIS IS COMMENTED OUT ELSE IT MESSES WITH THE DESIGN)
+
+// @mixin tff-main-menu-item-with-icon($icomoonLetter){
+//     &:before {
+//             content: "#{$icomoonLetter}";
+//         }
+// }
 
 // Use mixin
-@include tff-main-menu-item-with-icon(d);
+// @include tff-main-menu-item-with-icon(d);
