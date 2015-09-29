@@ -65,7 +65,7 @@ gulp.task('sass', function () {
 	return gulp
 		.src(sassSrc)
 		.pipe(gulpif(isDev, sourcemaps.init()))
-		.pipe(sass({ outputStyle: 'compressed' })).on('error', console.log)
+		.pipe(sass({ outputStyle: 'compressed', sourceComments: 'map' })).on('error', console.log)
 		.pipe(gulpif(!isDev, rev()))
 		.pipe(gulpif(isDev, sourcemaps.write()))
 		.pipe(gulp.dest(sassBld));
