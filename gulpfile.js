@@ -71,8 +71,8 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest(sassBld));
 });
 
-gulp.task('clean-build-folders', function (callback) {
-	del([jsBld, sassBld], callback);
+gulp.task('clean-build-folders', function () {
+	del.sync([jsBld, sassBld]);
 });
 
 
