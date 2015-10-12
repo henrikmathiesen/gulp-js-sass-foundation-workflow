@@ -1,6 +1,3 @@
-var isDev = true;
-
-
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -10,6 +7,10 @@ var gulpif = require('gulp-if');
 var rev = require('gulp-rev');
 var del = require('del');
 var inject = require('gulp-inject');
+var argv = require('yargs').argv;
+
+
+var isProduction = (argv.prod) ? (true) : (false);
 
 
 var jsAppSrc = [
@@ -42,32 +43,32 @@ var injectToHtml = function () {
 gulp.task('js-app', function () {
 	return gulp
 		.src(jsAppSrc)
-		.pipe(gulpif(isDev, sourcemaps.init()))
+		.pipe(gulpif(!isProduction, sourcemaps.init()))
 		.pipe(concat('app.js'))
 		.pipe(uglify())
-		.pipe(gulpif(!isDev, rev()))
-		.pipe(gulpif(isDev, sourcemaps.write()))
+		.pipe(gulpif(isProduction, rev()))
+		.pipe(gulpif(!isProduction, sourcemaps.write()))
 		.pipe(gulp.dest(jsBld));
 });
 
 gulp.task('js-lib', function () {
 	return gulp
 		.src(jsLibSrc)
-		.pipe(gulpif(isDev, sourcemaps.init()))
+		.pipe(gulpif(!isProduction, sourcemaps.init()))
 		.pipe(concat('lib.js'))
 		.pipe(uglify())
-		.pipe(gulpif(!isDev, rev()))
-		.pipe(gulpif(isDev, sourcemaps.write()))
+		.pipe(gulpif(isProduction, rev()))
+		.pipe(gulpif(!isProduction, sourcemaps.write()))
 		.pipe(gulp.dest(jsBld));
 });
 
 gulp.task('sass', function () {
 	return gulp
 		.src(sassSrc)
-		.pipe(gulpif(isDev, sourcemaps.init()))
-		.pipe(sass({ outputStyle: (isDev) ? ('expanded') : ('compressed') })).on('error', console.log)
-		.pipe(gulpif(!isDev, rev()))
-		.pipe(gulpif(isDev, sourcemaps.write()))
+		.pipe(gulpif(!isProduction, sourcemaps.init()))
+		.pipe(sass({ outputStyle: (!isProduction) ? ('expanded') : ('compressed') })).on('error', console.log)
+		.pipe(gulpif(isProduction, rev()))
+		.pipe(gulpif(!isProduction, sourcemaps.write()))
 		.pipe(gulp.dest(sassBld));
 });
 
@@ -88,7 +89,7 @@ gulp.task('sass-app-watcher', function () {
 
 gulp.task('default', ['clean-build-folders', 'js-app', 'js-lib', 'sass'], function () {
 	// If we are in dev environment we do not revision js and css files, so do not need to modify html file
-	if(isDev) { return; }
+	if(!isProduction) { return; }
 	injectToHtml();
 });
 
