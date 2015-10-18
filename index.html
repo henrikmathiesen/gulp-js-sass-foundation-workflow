@@ -51,6 +51,22 @@
     <div>
       <span class="fa fa-anchor"></span>
     </div>
+    
+    <hr />
+    <h3>Using Gulp to add Vendor prefixes</h3>
+    <p>We are going to use the Gulp plugin <a href="https://www.npmjs.com/package/gulp-autoprefixer">'gulp-autoprefixer'</a></p>
+    <p>
+      First we are going to use 'text-shadow'. According to 
+      <a href="http://css3.bradshawenterprises.com/which-vendor-prefixes-are-needed/">Which Vendor Prefixes are needed?</a> 
+      'text-shadow' does not need any vendor prefixes, but lets see how the gulp plugin reacts.
+    </p>
+    <h2 class="text-shadow">Text with shadow</h2>
+    <div class="row flex-test">
+      <div class="column small-6">Adam<br><br><br>Adamsson</div>
+      <div class="column small-6">Bertil</div>
+    </div>
+    <hr />
+    
     <!-- inject:js -->
     <script src="/js/bld/lib.js"></script>
     <script src="/js/bld/app.js"></script>
