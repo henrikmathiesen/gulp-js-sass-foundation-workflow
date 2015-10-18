@@ -88,13 +88,14 @@ gulp.task('sass-app-watcher', function () {
 
 
 gulp.task('default', ['clean-build-folders', 'js-app', 'js-lib', 'sass'], function () {
-	// If we are in dev environment we do not revision js and css files, so do not need to modify html file
+	// If we are in dev environment we do not revision js and css files, so do not need to modify html file on every build
+	// However this approach leads to having to use the reset job bellow, after a production build, to reset references to non revisioned
 	if(!isProduction) { return; }
 	injectToHtml();
 });
 
 gulp.task('reset-to-dev', ['clean-build-folders', 'js-app', 'js-lib', 'sass'], function () {
-	// If isDev is true, after a !isDev build, we need to reset html file with non revisioned file references
+	// If isProduction is false, after a isProduction build, we need to reset html file with non revisioned file references
 	// Then we can keep running the small watch jobs that only keeps overwriting the non revisioned files
 	injectToHtml();
 });
