@@ -74,6 +74,7 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest(sassBld));
 });
 
+
 gulp.task('clean-build-folders', function () {
 	del.sync([jsBld, sassBld]);
 });
@@ -88,6 +89,8 @@ gulp.task('sass-app-watcher', function () {
 });
 
 
+//
+// Main Tasks
 
 gulp.task('default', ['clean-build-folders', 'js-app', 'js-lib', 'sass'], function () {
 	// If we are in dev environment we do not revision js and css files, so do not need to modify html file on every build
