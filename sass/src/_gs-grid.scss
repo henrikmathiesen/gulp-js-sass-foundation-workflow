@@ -4,3 +4,11 @@
 		background-color: pink;
 	}
 }
+
+.box-sizing-test {
+	width:200px;
+	height:200px;
+	background-color: olive;
+	padding: 10px;
+	box-sizing: content-box;
+}

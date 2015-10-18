@@ -60,11 +60,18 @@
       <a href="http://css3.bradshawenterprises.com/which-vendor-prefixes-are-needed/">Which Vendor Prefixes are needed?</a> 
       'text-shadow' does not need any vendor prefixes, but lets see how the gulp plugin reacts.
     </p>
-    <h2 class="text-shadow">Text with shadow</h2>
+    <h3 class="text-shadow">Text with shadow</h3>
+    <h3>Flex Box</h3>
     <div class="row flex-test">
       <div class="column small-6">Adam<br><br><br>Adamsson</div>
       <div class="column small-6">Bertil</div>
     </div>
+    <h3>Box sizing</h3>
+    <div class="box-sizing-test">
+      Content
+    </div>
+    <h3>It works (both on expanded CSS and on minified)</h3>
+    <p>The Gulp plugin adds vendor prefixes according to browser versions specified. This is very nice!</p>
     <hr />
     
     <!-- inject:js -->

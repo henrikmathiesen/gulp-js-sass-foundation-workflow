@@ -68,7 +68,7 @@ gulp.task('sass', function () {
 		.src(sassSrc)
 		.pipe(gulpif(!isProduction, sourcemaps.init()))
 		.pipe(sass({ outputStyle: (!isProduction) ? ('expanded') : ('compressed') })).on('error', console.log)
-		.pipe(autoprefixer({ browsers: ['last 3 versions'] }))
+		.pipe(autoprefixer({ browsers: ['last 3 versions', 'Firefox < 29'] }))
 		.pipe(gulpif(isProduction, rev()))
 		.pipe(gulpif(!isProduction, sourcemaps.write()))
 		.pipe(gulp.dest(sassBld));
