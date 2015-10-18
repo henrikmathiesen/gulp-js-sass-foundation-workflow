@@ -3,6 +3,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
 var gulpif = require('gulp-if');
 var rev = require('gulp-rev');
 var del = require('del');
@@ -67,6 +68,7 @@ gulp.task('sass', function () {
 		.src(sassSrc)
 		.pipe(gulpif(!isProduction, sourcemaps.init()))
 		.pipe(sass({ outputStyle: (!isProduction) ? ('expanded') : ('compressed') })).on('error', console.log)
+		.pipe(autoprefixer({ browsers: ['last 3 versions'] }))
 		.pipe(gulpif(isProduction, rev()))
 		.pipe(gulpif(!isProduction, sourcemaps.write()))
 		.pipe(gulp.dest(sassBld));
