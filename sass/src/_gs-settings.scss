@@ -15,7 +15,7 @@
 
 // FOUNDATION SETTINGS
 
-// Modify so iPad portrait (medium) and iPad landscape (large) are in different ranges)
+// Consider Modifing so iPad portrait (medium) and iPad landscape (large) are in different ranges)
 // $small-breakpoint:  em-calc(640);
 // $medium-breakpoint: em-calc(1024);
 // $large-breakpoint:  em-calc(1440);
@@ -28,6 +28,17 @@ $fa-font-path: '../../bower_components/fontawesome/fonts/';
 
 
 // HELPER DOCUMENTATION
+
+// $small-breakpoint:  em-calc(640);
+// $medium-breakpoint: em-calc(1024);
+// $large-breakpoint:  em-calc(1440);
+// $xlarge-breakpoint: em-calc(1920);
+
+// $small-range:   (0, $small-breakpoint);
+// $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);
+// $large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint);
+// $xlarge-range:  ($large-breakpoint  + em-calc(1), $xlarge-breakpoint);
+// $xxlarge-range: ($xlarge-breakpoint + em-calc(1), em-calc(99999999));
 
 // Foundation helper classes for showing and hiding content based on Media Query
 // .show-for-small-only         // This text is shown only on small screens

@@ -74,6 +74,19 @@
     <p>The Gulp plugin adds vendor prefixes according to browser versions specified. This is very nice!</p>
     <hr />
     
+    <h3>Foundation push/pull columns</h3>
+    <p>
+      How do they work? Fantastic is seems! 
+      Consider this: On small we want two stacked columns, image column on top and text column on bottom,
+      but on medium-up we want the image column to the right of the text column.
+      Because of the order of the column markup that can not happen right out of the box.
+      There is where the push and pull classes come into play. Wonderful.
+    </p>
+    <div class="row push-pull-column-test">
+      <div class="column medium-6 medium-push-6">[IMAGE]</div>
+      <div class="column medium-6 medium-pull-6">Text</div>
+    </div>
+    
     <!-- inject:js -->
     <script src="/js/bld/lib.js"></script>
     <script src="/js/bld/app.js"></script>
