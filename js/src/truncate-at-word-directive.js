@@ -11,6 +11,7 @@
 		if (words.length <= cap || cap < 1) { return; }
 		
 		// Return 'first word' to 'word before cap int' (since zero index based it will include word at cap in one index based)
+		// Example: cap = 2 , ['lorem', 'ipsum'], will return word 0 and word 1
 		words = words.slice(0, cap);
 		
 		// Remove any delimiter characters from last word (last word will have three dots)
