@@ -17,7 +17,9 @@ var isProduction = (argv.prod) ? (true) : (false);
 var jsAppSrc = [
 	'./js/src/jsfile01.js',
 	'./js/src/jsfile02.js',
-	'./js/src/first-words-strong-directive.js'
+	'./js/src/first-words-strong-directive.js',
+	'./js/src/truncate-at-char-directive.js',
+	'./js/src/truncate-at-word-directive.js'
 ];
 
 var jsLibSrc = [
