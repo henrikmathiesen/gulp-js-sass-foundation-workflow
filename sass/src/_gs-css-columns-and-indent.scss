@@ -1,0 +1,14 @@
+.gs-css-columns-and-indent-strong {
+	//-webkit-columns: 200px 2;
+    //-moz-columns: 200px 2;
+    columns: 200px 2;
+	
+	//-webkit-column-gap: 20px;
+    //-moz-column-gap: 20px;
+    column-gap: 20px;
+	
+	p {
+		margin-bottom: 0;
+		text-indent: rem-calc(16px);
+	}
+}

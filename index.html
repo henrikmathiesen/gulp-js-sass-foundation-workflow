@@ -1,96 +1,104 @@
 <!doctype html>
 <html lang="en">
-  
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>JS Build with Gulp and SASS</title>
-    <meta name="description" content="JavaScript Build Automation With Gulp and SASS Architecture">
-    <!-- inject:css -->
-    <link rel="stylesheet" href="/sass/bld/app.css">
-    <!-- endinject -->
-  </head>
-  
-  <body>
-    <h1>JS Build with Gulp and SASS</h1>
-    <h2>Goals</h2>
-    <ul>
-      <li>Learn about Gulp, following the Pluralsight course "JavaScript Build Automation With Gulp.js"</li>
-      <li>Bundle JavaScript</li>
-      <li>Minify JavaScript</li>
-      <li>Compile SASS to CSS</li>
-      <li>Minify CSS</li>
-      <li>We want to be able to debug the source with either source map or dev/build environment</li>
-      <li>Include Foundation and Font Awesome, set it up (SASS and JS)</li>
-      <li>Tie it all together with Gulp</li>
-    </ul>
-    <h3>Overview of Gulp API</h3>
-    <h4>gulp.task</h4>
-    <div>
-      <p>Define the unique name for the task and a function to execute when task is run. If the task has dependencies, those will
-        be handled (run in parallel) to aid the task.</p>
-      <code>gulp.task('name', [dependencies], function)</code>
-    </div>
-    <h4>gulp.src</h4>
-    <div>
-      <p>The first argument is called "glob" and is the path to the source files.</p>
-      <code>return gulp.src('./file/path/**/*.js', [options])</code>
-    </div>
-    <h4>gulp.dest</h4>
-    <p>To where do we write the file(s) when done.</p>
-    <div>
-      <code>return gulp.pipe(gulp.dest('./build/', [options]))</code>
-    </div>
-    <h4>gulp.watch</h4>
-    <p>Watch files and run a series of tasks (defined in an array) when any of those files changes. Alternative can switch the
-      array for a callback function (that gets an event argument)</p>
-    <div>
-      <code>gulp.watch('./file/path/**/*.js', [options], ['task01', 'task02'])</code>
-    </div>
-    <div>
-      <span class="fa fa-anchor"></span>
-    </div>
-    
-    <hr />
-    <h3>Using Gulp to add Vendor prefixes</h3>
-    <p>We are going to use the Gulp plugin <a href="https://www.npmjs.com/package/gulp-autoprefixer">'gulp-autoprefixer'</a></p>
-    <p>
-      First we are going to use 'text-shadow'. According to 
-      <a href="http://css3.bradshawenterprises.com/which-vendor-prefixes-are-needed/">Which Vendor Prefixes are needed?</a> 
-      'text-shadow' does not need any vendor prefixes, but lets see how the gulp plugin reacts.
-    </p>
-    <h3 class="text-shadow">Text with shadow</h3>
-    <h3>Flex Box</h3>
-    <div class="row flex-test">
-      <div class="column small-6">Adam<br><br><br>Adamsson</div>
-      <div class="column small-6">Bertil</div>
-    </div>
-    <h3>Box sizing</h3>
-    <div class="box-sizing-test">
-      Content
-    </div>
-    <h3>It works (both on expanded CSS and on minified)</h3>
-    <p>The Gulp plugin adds vendor prefixes according to browser versions specified. This is very nice!</p>
-    <hr />
-    
-    <h3>Foundation push/pull columns</h3>
-    <p>
-      How do they work? Fantastic is seems! 
-      Consider this: On small we want two stacked columns, image column on top and text column on bottom,
-      but on medium-up we want the image column to the right of the text column.
-      Because of the order of the column markup that can not happen right out of the box.
-      There is where the push and pull classes come into play. Wonderful.
-    </p>
-    <div class="row push-pull-column-test">
-      <div class="column medium-6 medium-push-6">[IMAGE]</div>
-      <div class="column medium-6 medium-pull-6">Text</div>
-    </div>
-    
-    <!-- inject:js -->
-    <script src="/js/bld/lib.js"></script>
-    <script src="/js/bld/app.js"></script>
-    <!-- endinject -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JS Build with Gulp and SASS</title>
+  <meta name="description" content="JavaScript Build Automation With Gulp and SASS Architecture">
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/sass/bld/app.css">
+  <!-- endinject -->
+</head>
+
+<body>
+  <h1>JS Build with Gulp and SASS</h1>
+  <h2>Goals</h2>
+  <ul>
+    <li>Learn about Gulp, following the Pluralsight course "JavaScript Build Automation With Gulp.js"</li>
+    <li>Bundle JavaScript</li>
+    <li>Minify JavaScript</li>
+    <li>Compile SASS to CSS</li>
+    <li>Minify CSS</li>
+    <li>We want to be able to debug the source with either source map or dev/build environment</li>
+    <li>Include Foundation and Font Awesome, set it up (SASS and JS)</li>
+    <li>Tie it all together with Gulp</li>
+  </ul>
+  <h3>Overview of Gulp API</h3>
+  <h4>gulp.task</h4>
+  <div>
+    <p>Define the unique name for the task and a function to execute when task is run. If the task has dependencies, those will
+      be handled (run in parallel) to aid the task.</p>
+    <code>gulp.task('name', [dependencies], function)</code>
+  </div>
+  <h4>gulp.src</h4>
+  <div>
+    <p>The first argument is called "glob" and is the path to the source files.</p>
+    <code>return gulp.src('./file/path/**/*.js', [options])</code>
+  </div>
+  <h4>gulp.dest</h4>
+  <p>To where do we write the file(s) when done.</p>
+  <div>
+    <code>return gulp.pipe(gulp.dest('./build/', [options]))</code>
+  </div>
+  <h4>gulp.watch</h4>
+  <p>Watch files and run a series of tasks (defined in an array) when any of those files changes. Alternative can switch the
+    array for a callback function (that gets an event argument)</p>
+  <div>
+    <code>gulp.watch('./file/path/**/*.js', [options], ['task01', 'task02'])</code>
+  </div>
+  <div>
+    <span class="fa fa-anchor"></span>
+  </div>
+
+  <hr />
+  <h3>Using Gulp to add Vendor prefixes</h3>
+  <p>We are going to use the Gulp plugin <a href="https://www.npmjs.com/package/gulp-autoprefixer">'gulp-autoprefixer'</a></p>
+  <p>
+    First we are going to use 'text-shadow'. According to
+    <a href="http://css3.bradshawenterprises.com/which-vendor-prefixes-are-needed/">Which Vendor Prefixes are needed?</a>    'text-shadow' does not need any vendor prefixes, but lets see how the gulp plugin reacts.
+  </p>
+  <h3 class="text-shadow">Text with shadow</h3>
+  <h3>Flex Box</h3>
+  <div class="row flex-test">
+    <div class="column small-6">Adam
+      <br>
+      <br>
+      <br>Adamsson</div>
+    <div class="column small-6">Bertil</div>
+  </div>
+  <h3>Box sizing</h3>
+  <div class="box-sizing-test">
+    Content
+  </div>
+  <h3>It works (both on expanded CSS and on minified)</h3>
+  <p>The Gulp plugin adds vendor prefixes according to browser versions specified. This is very nice!</p>
+  <hr />
+
+  <h3>Foundation push/pull columns</h3>
+  <p>
+    How do they work? Fantastic is seems! Consider this: On small we want two stacked columns, image column on top and text column
+    on bottom, but on medium-up we want the image column to the right of the text column. Because of the order of the column
+    markup that can not happen right out of the box. There is where the push and pull classes come into play. Wonderful.
+  </p>
+  <div class="row push-pull-column-test">
+    <div class="column medium-6 medium-push-6">[IMAGE]</div>
+    <div class="column medium-6 medium-pull-6">Text</div>
+  </div>
+  <hr />
+
+  <h3>Paragraph with columns and text indent</h3>
+  <div class="gs-css-columns-and-indent-strong" data-first-words-in-p-tags-strong="3">
+    <p>Stycke <em>ett</em>. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolore repellat perspiciatis, magnam rem facere error est ut accusantium nostrum officia fuga magni delectus deleniti eligendi suscipit pariatur voluptatem sint! Slut.</p>
+    <p>Stycke två. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolore repellat perspiciatis, magnam rem facere error est ut accusantium nostrum officia fuga magni delectus deleniti eligendi suscipit pariatur voluptatem sint! Slut.</p>
+    <p>Stycke tre. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolore repellat perspiciatis, magnam rem facere error est ut accusantium nostrum officia fuga magni delectus deleniti eligendi suscipit pariatur voluptatem sint! Slut.</p>
+  </div>
+
+  <!-- inject:js -->
+  <script src="/js/bld/lib.js"></script>
+  <script src="/js/bld/app.js"></script>
+  <!-- endinject -->
+</body>
 
 </html>
