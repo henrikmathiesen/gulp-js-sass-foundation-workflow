@@ -24,8 +24,14 @@
     <li>We want to be able to debug the source with either source map or dev/build environment</li>
     <li>Include Foundation and Font Awesome, set it up (SASS and JS)</li>
     <li>Tie it all together with Gulp</li>
-    <li>Various other CSS and JavaScript testing</li>
-    <li><a href="views/centering-content.html">Centering Content on its own page</a></li>
+    <li>Various other CSS and JavaScript testing
+      <ul>
+        <li><a href="views/foundation-push-pull-columns.html">Foundation - push/pull columns</a></li>
+        <li><a href="views/paragraph-columns-also-strong-words.html">Paragraph columns with text indent, also strong words</a></li>
+        <li><a href="views/truncate-at-char-or-word.html">Truncate at char or word</a></li>
+        <li><a href="views/centering-content.html">Centering content</a></li>
+      </ul>
+    </li>
   </ul>
   <h3>Overview of Gulp API</h3>
   <h4>gulp.task</h4>
@@ -77,32 +83,8 @@
   <h3>It works (both on expanded CSS and on minified)</h3>
   <p>The Gulp plugin adds vendor prefixes according to browser versions specified. This is very nice!</p>
   <hr />
-
-  <h3>Foundation push/pull columns</h3>
-  <p>
-    How do they work? Fantastic is seems! Consider this: On small we want two stacked columns, image column on top and text column
-    on bottom, but on medium-up we want the image column to the right of the text column. Because of the order of the column
-    markup that can not happen right out of the box. There is where the push and pull classes come into play. Wonderful.
-  </p>
-  <div class="row push-pull-column-test">
-    <div class="column medium-6 medium-push-6">[IMAGE]</div>
-    <div class="column medium-6 medium-pull-6">Text</div>
-  </div>
-  <hr />
-
-  <h3>Paragraph with columns and text indent</h3>
-  <div class="gs-css-columns-and-indent-strong" data-first-words-in-p-tags-strong="3">
-    <p>Stycke <em>ett</em>. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolore repellat perspiciatis, magnam rem facere error est ut accusantium nostrum officia fuga magni delectus deleniti eligendi suscipit pariatur voluptatem sint! Slut.</p>
-    <p>Stycke två. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolore repellat perspiciatis, magnam rem facere error est ut accusantium nostrum officia fuga magni delectus deleniti eligendi suscipit pariatur voluptatem sint! Slut.</p>
-    <p>Stycke tre. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolore repellat perspiciatis, magnam rem facere error est ut accusantium nostrum officia fuga magni delectus deleniti eligendi suscipit pariatur voluptatem sint! Slut.</p>
-  </div>
   
-  <h3>Truncate text at char</h3>
-  <p data-truncate-at-char="7">Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Libero dolorum blanditiis, nobis nihil optio inventore esse voluptate accusantium asperiores dignissimos? Laborum harum laboriosam fuga, illo, aliquid enim incidunt magni possimus.</p>
-
-  <h3>Truncate text at word</h3>
-  <p data-truncate-at-word="6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero dolorum blanditiis, nobis nihil optio inventore esse voluptate accusantium asperiores dignissimos? Laborum harum laboriosam fuga, illo, aliquid enim incidunt magni possimus.</p>
-
+  
   <!-- inject:js -->
   <script src="/js/bld/lib.js"></script>
   <script src="/js/bld/app.js"></script>
