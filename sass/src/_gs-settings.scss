@@ -16,10 +16,10 @@
 // FOUNDATION SETTINGS
 
 // Consider Modifing so iPad portrait (medium) and iPad landscape (large) are in different ranges)
-// $small-breakpoint:  em-calc(640);
-// $medium-breakpoint: em-calc(1024);
-// $large-breakpoint:  em-calc(1440);
-// $xlarge-breakpoint: em-calc(1920);
+$small-breakpoint:  em-calc(450);
+$medium-breakpoint: em-calc(768);
+$large-breakpoint:  em-calc(1024);
+$xlarge-breakpoint: em-calc(1920);
 
 
 // FONT AWESOME SETTING
@@ -34,11 +34,11 @@ $fa-font-path: '../../bower_components/fontawesome/fonts/';
 // $large-breakpoint:  em-calc(1440);
 // $xlarge-breakpoint: em-calc(1920);
 
-// $small-range:   (0, $small-breakpoint);
-// $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);
-// $large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint);
-// $xlarge-range:  ($large-breakpoint  + em-calc(1), $xlarge-breakpoint);
-// $xxlarge-range: ($xlarge-breakpoint + em-calc(1), em-calc(99999999));
+// $small-range:   (0, $small-breakpoint);											0		-		450
+// $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);			451		-		768		
+// $large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint);			769		-		1024
+// $xlarge-range:  ($large-breakpoint  + em-calc(1), $xlarge-breakpoint);			1025	-		1920
+// $xxlarge-range: ($xlarge-breakpoint + em-calc(1), em-calc(99999999));			1921	-		9999
 
 // Foundation helper classes for showing and hiding content based on Media Query
 // .show-for-small-only         // This text is shown only on small screens

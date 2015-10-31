@@ -1,3 +1,71 @@
-.gs-centering-content {
+@mixin top-bar-base-style(){
+	font-size: rem-calc(13px);
+	text-align: center;
 	
+	padding-left: rem-calc(10px);
+	padding-right: rem-calc(10px);
+	
+	border-top: 1px solid olive;
+	border-bottom: 1px solid olive;
+	border-left: 1px solid olive;
+	
+	&:last-child {
+		border-right: 1px solid olive;
+	}
+}
+
+@mixin center-xy-with-absolute-and-transform(){
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	width:100%;
+}
+
+
+
+.gs-top-bar-simple {
+	.column {
+		@include top-bar-base-style();
+		height: rem-calc(80px);
+		span {
+			line-height: rem-calc(80px);
+		}
+	}
+}
+
+.gs-top-bar-multiple-line {
+	.column {
+		@include top-bar-base-style();
+		height: rem-calc(80px);
+		
+		// column needs to be position relative, which it is by Foundation
+		
+		// This is old school and only works if we know the width and height (which we dont in this case)
+		// span {
+		// 	position: absolute;
+		// 	top:50%;
+		// 	left:50%;
+		// 	
+		// 	margin-top: -19px;
+		// 	margin-left: -83px;
+		// }
+		
+		span {
+			@include center-xy-with-absolute-and-transform();
+		}
+	}
+}
+
+.gs-top-bar-multiple-line-flex {
+	.column {
+		@include top-bar-base-style();
+		padding-top: rem-calc(10px);
+		padding-bottom: rem-calc(10px);
+		
+		display: flex;
+		align-items: center; 					// y-axis
+		justify-content: center;				// x-axis
+		
+	}
 }

@@ -24,7 +24,8 @@ var jsAppSrc = [
 var jsLibSrc = [
 	'./bower_components/foundation/js/vendor/jquery.js',
 	'./bower_components/foundation/js/vendor/fastclick.js',
-	'./bower_components/foundation/js/foundation/foundation.js'
+	'./bower_components/foundation/js/foundation/foundation.js',
+	'./bower_components/foundation/js/foundation/foundation.equalizer.js'
 ];
 
 var sassSrc = './sass/src/app.scss';

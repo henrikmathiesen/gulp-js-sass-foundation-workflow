@@ -3,7 +3,12 @@ h1 {
 }
 
 h2 {
+	margin-top: rem-calc(15px);
 	color:green;
+}
+
+.text-danger {
+	color:#C04B2E;
 }
 
 .text-shadow {
