@@ -15,8 +15,7 @@ var isProduction = (argv.prod) ? (true) : (false);
 
 
 var jsAppSrc = [
-	'./js/src/jsfile01.js',
-	'./js/src/jsfile02.js',
+	'./js/src/global.js',
 	'./js/src/first-words-strong-directive.js',
 	'./js/src/truncate-at-char-directive.js',
 	'./js/src/truncate-at-word-directive.js'
@@ -35,11 +34,28 @@ var sassBld = './sass/bld/';
 
 
 var injectToHtml = function () {
-	var target = gulp.src('./index.html');
-	var sources = gulp.src([jsBld + 'lib*.js', jsBld + 'app*.js', sassBld + 'app*.css'], { read: false });
 
-	return target.pipe(inject(sources))
-		.pipe(gulp.dest('./'));
+	var sourcesToInject = gulp.src([jsBld + 'lib*.js', jsBld + 'app*.js', sassBld + 'app*.css'], { read: false });
+
+	var injectToIndexView = function(){
+		var indexTarget = gulp.src('./index.html');
+		
+		return indexTarget
+					.pipe(inject(sourcesToInject))
+					.pipe(gulp.dest('./')); 
+	};
+
+	var injectToRestOfviews = function(){
+		var restOfViewsTarget = gulp.src('./views/*.html');
+		
+		return restOfViewsTarget
+					.pipe(inject(sourcesToInject))
+					.pipe(gulp.dest('./views/'));
+	};
+	
+	injectToIndexView();
+	injectToRestOfviews();			
+
 };
 
 
