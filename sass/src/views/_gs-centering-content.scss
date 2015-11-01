@@ -16,6 +16,11 @@
 	}
 }
 
+@mixin menu-item-top-bottom-padding(){
+	padding-top: rem-calc(10px);
+	padding-bottom: rem-calc(10px);
+}
+
 @mixin center-xy-with-absolute-and-transform(){
 	position: absolute;
 	top:50%;
@@ -60,14 +65,126 @@
 }
 
 .gs-top-bar-multiple-line-flex {
+	display: flex;
+	
 	.column {
 		@include top-bar-base-style();
-		padding-top: rem-calc(10px);
-		padding-bottom: rem-calc(10px);
+		@include menu-item-top-bottom-padding();
 		
 		display: flex;
 		align-items: center; 					// y-axis
-		justify-content: center;				// x-axis
+		justify-content: center;				// x-axis (we need this despite 'text-align:center')
 		
 	}
+}
+
+.gs-top-bar-multiple-line-display-table {
+	.column {
+		@include top-bar-base-style();
+		@include menu-item-top-bottom-padding();
+		
+		display: table;
+		
+		&:last-child {
+			float: left;						// Else border gap in Chrome
+		}
+		
+		span {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+}
+
+.gs-top-links-evenly-spaced {
+	list-style-type: none;
+	margin: 0;
+	
+	width:100%;
+	max-width: rem-calc(1000px);
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	display: flex;
+	
+	li {
+		cursor:pointer;
+		
+		@include menu-item-top-bottom-padding();
+		width:100%;
+		display: flex;
+		align-items: center; 					// y-axis
+		justify-content: center;				// x-axis (we need this despite 'text-align:center')
+		
+		text-align: center;
+		
+		
+		background-color: lightblue;
+		
+		&:first-child {
+			background-color: lightgrey;
+		}
+		
+		&:hover {
+			background-color: lightcyan;
+		}
+	}
+}
+
+.gs-inline-list {								// Foundation widget
+	margin: 0;
+	
+	width:100%;
+	max-width: rem-calc(1000px);
+	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.gs-top-links-evenly-spaced-display-table {
+	list-style-type: none;
+	margin: 0;
+	
+	width:100%;
+	max-width: rem-calc(1000px);
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	display: table;
+	table-layout: fixed;						// Need this for evenly spacing, flexed
+	
+	li {
+		cursor:pointer;
+		
+		@include menu-item-top-bottom-padding();
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		
+		background-color: lightblue;
+		
+		&:first-child {
+			background-color: lightgrey;
+		}
+		
+		&:hover {
+			background-color: lightcyan;
+		}
+	}
+}
+
+.gs-evenly-spaced-links {
+	list-style-type: none;
+	margin: 0;
+	
+	width:100%;
+	max-width: rem-calc(1000px);
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	display: flex;
+	justify-content: space-between;				// space-between | space-around 
 }

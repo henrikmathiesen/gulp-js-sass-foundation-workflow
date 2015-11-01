@@ -26,7 +26,7 @@
 		if a block element like the .row has a width or max-width 
 		and margin-left and margin-right auto, it is centered on x-axis.
 		This top bar has centered content on x- and y-axis. It works
-		as long as: it fits and text is only on one line.
+		as long as: it fits and text, is only on one line and column has a height.
 	</p>
 	<div class="row gs-top-bar-simple">
 		<div class="column large-2"><span>Start</span></div>
@@ -43,6 +43,7 @@
 		but it should support two lines.
 		Please observe here that since span is positioned absolute, the
 		parent element will not grow if more lines are added.
+		Also the column need a set height.
 	</p>
 	<div class="row gs-top-bar-multiple-line">
 		<div class="column large-2"><span>Start</span></div>
@@ -57,9 +58,22 @@
 	<p>
 		Top Bar again, this time it should look the same as above
 		but support several lines, so it needs to grow with its content.
-		Flex and Foundation equalizer to the rescue!
+		Flex to the rescue!
 	</p>
-	<div class="row gs-top-bar-multiple-line-flex" data-equalizer>
+	<div class="row gs-top-bar-multiple-line-flex">
+		<div class="column large-2"><span>Start</span></div>
+		<div class="column large-2"><span>Lorem ipsum</span></div>
+		<div class="column large-2"><span>Y-axeln och du ska gå bra ihop tillsammans</span></div>
+		<div class="column large-2"><span>Some link</span></div>
+		<div class="column large-2"><span>About us</span></div>
+		<div class="column large-2"><span>Kontakta oss så snackar vi business tillsammans och gör massa bra deals</span></div>
+	</div>
+	
+	<h2>Top Bar with display table (works in IE10)</h2>
+	<p>
+		Lets see if we can recreate the above with display table. Here we need Foundation equalizer to set even height.
+	</p>
+	<div class="row gs-top-bar-multiple-line-display-table" data-equalizer>
 		<div class="column large-2" data-equalizer-watch><span>Start</span></div>
 		<div class="column large-2" data-equalizer-watch><span>Lorem ipsum</span></div>
 		<div class="column large-2" data-equalizer-watch><span>Y-axeln och du ska gå bra ihop tillsammans</span></div>
@@ -68,7 +82,52 @@
 		<div class="column large-2" data-equalizer-watch><span>Kontakta oss så snackar vi business tillsammans och gör massa bra deals</span></div>
 	</div>
 	
-	<!-- TODO: display table -->
+	<h2>Top links, evenly spaced <span class="text-danger">(OBS: NO < IE11)</span></h2>
+	<p>
+		We want some top navigation here, no borders, text evenly spaced. We do it with flex again. This time no Foundation columns.
+	</p>
+	<ul class="gs-top-links-evenly-spaced">
+		<li><span>Home</span></li>
+		<li><span>Products</span></li>
+		<li><span>Lorem ipsum</span></li>
+		<li><span>Press</span></li>
+		<li><span>Lorem</span></li>
+		<li><span>About us oooh this is going to be more</span></li>
+	</ul>
+	
+	<h2>Top links, evenly spaced with Foundation widget</h2>
+	<p>
+		This does not work so well for what we want.
+	</p>
+	<ul class="inline-list gs-inline-list">
+		<li>Home</li>
+		<li>Products</li>
+		<li>Lorem ipsum</li>
+		<li>Press</li>
+		<li>Lorem</li>
+		<li>About ut</li>
+	</ul>
+	
+	<h2>Top links, evenly spaced with display table (works in IE10)</h2>
+	<ul class="gs-top-links-evenly-spaced-display-table">
+		<li>Home</li>
+		<li>Products</li>
+		<li>Lorem ipsum</li>
+		<li>Press</li>
+		<li>Lorem</li>
+		<li>About us oooh this is going to be more line</li>
+	</ul>
+	
+	<h2>Just evenly spaced links <span class="text-danger">(OBS: NO < IE11)</span></h2>
+	<ul class="gs-evenly-spaced-links">
+		<li>Link 01 yeah</li>
+		<li>Link 02 is here</li>
+		<li>Link 03 with jokers to the right</li>
+		<li>Link 04 ho ho</li>
+		<li>Link 05 had much to say</li>
+		<li>Link 06 in Lingon Forest</li>
+	</ul>
+	
 	
 	
 	<!-- inject:js -->
