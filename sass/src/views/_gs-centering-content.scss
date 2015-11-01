@@ -16,6 +16,12 @@
 	}
 }
 
+@mixin foundation-column-base-style(){
+	padding-top: 15px;
+	padding-bottom: 15px;
+	outline: 1px solid goldenrod;
+}
+
 @mixin menu-item-top-bottom-padding(){
 	padding-top: rem-calc(10px);
 	padding-bottom: rem-calc(10px);
@@ -187,4 +193,36 @@
 	
 	display: flex;
 	justify-content: space-between;				// space-between | space-around 
+}
+
+//
+//
+//
+// A CONTAINER WITH CENTERED CONTENT ON XY-AXIS (TWO VERSION; FOR < IE11 AND FOR >= IE11)
+
+.row.gs-flex-foundation-block {
+	display: flex;
+	
+	.column {
+		@include foundation-column-base-style();
+		
+		display: flex;
+		align-items: center; 					// y-axis
+		
+		.gs-flex-foundation-block-inner {
+			width:100%;
+		}
+	}
+}
+
+.row.gs-display-table-foundation-block {
+	.column {
+		@include foundation-column-base-style();
+		display: table;
+		
+		.gs-display-table-foundation-block-inner {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
 }
