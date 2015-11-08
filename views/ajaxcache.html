@@ -16,23 +16,23 @@
 	<h1>Ajax Cache</h1>
 
 	<p>
-		We want to render some Ajax content with Mustache. We fetch it from an ajax http endpoint only the first time
-		it is requested, subsequentaly times it is rendered from local cache (a javascript object basicly).
+		We want to render some Ajax content with Mustache. We fetch it from an ajax http endpoint only the first time it is requested,
+		subsequentaly times it is rendered from local cache (a javascript object basicly).
 	</p>
-	
-	<div>
-		<a href="#" data-render-ajax-content="data-ajax-content">Click me to render Ajax Content</a>
-	</div>
-	
-	<br /><br />
-	
-	<hr>
-	<div data-ajax-content="">
-		
-	</div>
-	<hr>
-	
 
+	<div>
+		<a href="#" 
+			data-render-ajax-content="" 
+			data-mustache-template="[data-mustache-template-event]" 
+			data-render-container="[data-render-container-event]">Click me to render Ajax Content</a>
+	</div>
+
+	<br />
+	<br />
+
+	<hr>
+	<div data-render-container-event=""></div>
+	<hr>
 
 	<!-- inject:js -->
 	<script src="/js/bld/lib.js"></script>

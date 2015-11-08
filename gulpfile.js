@@ -16,6 +16,7 @@ var isProduction = (argv.prod) ? (true) : (false);
 
 var jsAppSrc = [
 	'./js/src/global.js',
+	'./js/src/mustache-templates/mustache-template-event.js',
 	'./js/src/first-words-strong-directive.js',
 	'./js/src/truncate-at-char-directive.js',
 	'./js/src/truncate-at-word-directive.js',
@@ -26,7 +27,8 @@ var jsLibSrc = [
 	'./bower_components/foundation/js/vendor/jquery.js',
 	'./bower_components/foundation/js/vendor/fastclick.js',
 	'./bower_components/foundation/js/foundation/foundation.js',
-	'./bower_components/foundation/js/foundation/foundation.equalizer.js'
+	'./bower_components/foundation/js/foundation/foundation.equalizer.js',
+	'./bower_components/mustache/mustache.min.js'
 ];
 
 var sassSrc = './sass/src/app.scss';
