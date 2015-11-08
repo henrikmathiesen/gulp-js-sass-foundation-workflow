@@ -18,7 +18,8 @@ var jsAppSrc = [
 	'./js/src/global.js',
 	'./js/src/first-words-strong-directive.js',
 	'./js/src/truncate-at-char-directive.js',
-	'./js/src/truncate-at-word-directive.js'
+	'./js/src/truncate-at-word-directive.js',
+	'./js/src/render-ajax-content-directive.js'
 ];
 
 var jsLibSrc = [
