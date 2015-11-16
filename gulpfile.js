@@ -16,7 +16,7 @@ var isProduction = (argv.prod) ? (true) : (false);
 
 var jsAppSrc = [
 	'./js/src/global.js',
-	'./js/src/mustache-templates/mustache-template-event.js',
+	'./js/src/mustache-templates/event-mustache-template.js',
 	'./js/src/first-words-strong-directive.js',
 	'./js/src/truncate-at-char-directive.js',
 	'./js/src/truncate-at-word-directive.js',

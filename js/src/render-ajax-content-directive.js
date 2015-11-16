@@ -4,7 +4,7 @@
 		e.preventDefault();
 
 		var $renderContentSelector = $($(this).attr('data-render-container'));
-		var mustacheTemplate = window.app.mtEvent();
+		var mustacheTemplate = window.app.eventMustacheTemplate();
 
 		// Ajax Content is rendered, no need to fetch and render on subsequent clicks
 		if ($renderContentSelector.find('>h2').length) { return; }
