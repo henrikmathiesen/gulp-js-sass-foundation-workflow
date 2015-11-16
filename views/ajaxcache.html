@@ -17,11 +17,35 @@
 
 	<p>
 		We want to render some Ajax content with Mustache. We fetch it from an ajax http endpoint only the first time it is requested.
+		We are goin to do this in two ways:
 	</p>
+	<ul>
+		<li>The first link click checks if content already is in DOM</li>
+		<li>The second link caches the respons in a local object</li>
+	</ul>
 
 	<div>
 		<a href="#" 
-			data-render-ajax-content="" data-render-container="[data-render-container-event]">Click me to render Ajax Content</a>
+			data-render-ajax-content=""
+			data-render-ajax-cache-type="h2" 
+			data-render-ajax-mustache-template="window.app.eventMustacheTemplate()"
+			data-render-ajax-container="[data-render-container-event]">Click me to render Ajax Content</a>
+			
+			<br>
+			
+		<a href="#"
+			data-render-ajax-content=""
+			data-render-ajax-cache-type="js" 
+			data-render-ajax-mustache-template="window.app.eventMustacheTemplate()"
+			data-render-ajax-container="[data-render-container-event]">Click me too to render Ajax Content</a>
+			
+			<br>
+			
+		<a href="#"
+			data-render-ajax-content=""
+			data-render-ajax-cache-type="" 
+			data-render-ajax-mustache-template="window.app.eventMustacheTemplate()"
+			data-render-ajax-container="[data-render-container-event]">Click me too to render Ajax Content no cache</a>
 	</div>
 
 	<br />
