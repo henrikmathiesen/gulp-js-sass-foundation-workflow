@@ -36,10 +36,16 @@ var sassSrcWatch = './sass/src/**/*.scss';
 var jsBld = './js/bld/';
 var sassBld = './sass/bld/';
 
+var injectSources = [
+	jsBld + 'lib*.js', 
+	jsBld + 'app*.js', 
+	sassBld + 'app*.css'
+];
+
 
 var injectToHtml = function () {
 
-	var sourcesToInject = gulp.src([jsBld + 'lib*.js', jsBld + 'app*.js', sassBld + 'app*.css'], { read: false });
+	var sourcesToInject = gulp.src(injectSources, { read: false });
 
 	var injectToIndexView = function(){
 		var indexTarget = gulp.src('./index.html');

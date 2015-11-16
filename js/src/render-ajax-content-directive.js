@@ -7,7 +7,7 @@
 		var mustacheTemplate = window.app.mtEvent();
 
 		// Ajax Content is rendered, no need to fetch and render on subsequent clicks
-		if ($renderContentSelector.has('h2').length) { return; }
+		if ($renderContentSelector.find('>h2').length) { return; }
 		
 		$.get('http://localhost:1338/getevents')
 				.then(function (data) {
