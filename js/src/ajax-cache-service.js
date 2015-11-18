@@ -13,7 +13,6 @@ window.app.ajaxCacheService = function(){
 
     var pushToCache = function (item, response) {
         _ajaxCache.push({ cachedItem: item, cachedResponse: response });
-        console.log(_ajaxCache);
     };
 
     var pullFromCache = function (item) {
