@@ -15,20 +15,21 @@
 				});	
 		};
 		
+		var ajaxCachingCheck = function(){
+			
+		};
+		
 		switch(cacheType) {
 			case "":
 				// No caching - always make ajax call when link is clicked
-				console.log("No caching");
 				getAndRenderAjaxData();
 				break;
 			case "js":
 				// Caching with javascript construct
-				// ...
-				console.log("JS caching");
+				ajaxCachingCheck();
 				break;
 			default:
 				// Caching with selector check - if selector is in DOM, then no need to make ajax call again
-				console.log("Selector caching");
 				if ($renderContentSelector.children($(cacheType)).length) { return; }
 				getAndRenderAjaxData();
 				break;
