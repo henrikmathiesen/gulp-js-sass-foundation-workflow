@@ -6,17 +6,29 @@
 		var $renderContentSelector = $($(this).attr('data-render-ajax-container'));
 		var mustacheTemplate =  eval($(this).attr('data-render-ajax-mustache-template'));
 		var cacheType = $(this).attr('data-render-ajax-cache-type');
+		var ajaxCachingCheckJsId = $(this).attr('data-render-ajax-content-id');
 		
 		
-		var getAndRenderAjaxData = function(){
+		var getAndRenderAjaxData = function(shouldPushToCache){
 			$.get('http://localhost:1338/getevents')
 				.then(function (data) {
 					$renderContentSelector.html(Mustache.render(mustacheTemplate, data[0]));
+					
+					if(shouldPushToCache) {
+						window.app.ajaxCacheService.pushToCache(ajaxCachingCheckJsId, data[0]);
+					}
 				});	
 		};
 		
-		var ajaxCachingCheck = function(){
+		var ajaxCachingCheckJs = function(){
+			var itemFromCache = window.app.ajaxCacheService.pullFromCache(ajaxCachingCheckJsId);
 			
+			if(itemFromCache) {
+				$renderContentSelector.html(Mustache.render(mustacheTemplate, itemFromCache));
+			}
+			else {
+				getAndRenderAjaxData(true);
+			}
 		};
 		
 		switch(cacheType) {
@@ -26,7 +38,7 @@
 				break;
 			case "js":
 				// Caching with javascript construct
-				ajaxCachingCheck();
+				ajaxCachingCheckJs();
 				break;
 			default:
 				// Caching with selector check - if selector is in DOM, then no need to make ajax call again
@@ -42,9 +54,6 @@
 			if ($renderContentSelector.children($(cacheType)).length) { return; }
 			
 		}
-
-		
-		
 
 	});
 
