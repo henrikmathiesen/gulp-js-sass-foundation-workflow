@@ -17,11 +17,16 @@ var isProduction = (argv.prod) ? (true) : (false);
 var jsAppSrc = [
 	'./js/src/global.js',
 	'./js/src/ajax-cache-service.js',
+	'./js/src/pub-sub/event-bus-service.js',
 	'./js/src/mustache-templates/event-mustache-template.js',
 	'./js/src/first-words-strong-directive.js',
 	'./js/src/truncate-at-char-directive.js',
 	'./js/src/truncate-at-word-directive.js',
-	'./js/src/render-ajax-content-directive.js'
+	'./js/src/render-ajax-content-directive.js',
+	
+	'./js/src/pub-sub/publisher.js',
+	'./js/src/pub-sub/listener01.js',
+	'./js/src/pub-sub/listener02.js',
 ];
 
 var jsLibSrc = [

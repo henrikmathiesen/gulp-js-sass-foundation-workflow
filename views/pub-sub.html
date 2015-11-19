@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pub Sub - JS Build with Gulp and SASS</title>
+	<meta name="description" content="JavaScript Build Automation With Gulp and SASS Architecture">
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/sass/bld/app.css">
+	<!-- endinject -->
+</head>
+
+<body>
+	<h1>Pub Sub</h1>
+
+	<p>
+		Following the Youtube course, LearnCodeAcademys <a href="https://www.youtube.com/watch?v=nQRXi1SVOow" target="_blank">"Modular Javascript #4 - PubSub Javascript Design Pattern"</a>
+		the goal is to register custom events and let other parts of the javascript code to subscribe and act on the events.
+	</p>
+	
+	<h2>When user adds a name, it is saved to an array</h2>
+	<p>
+		We have two listeners, js files, who are interested in this.
+		One of them has the responsibility to add a red outline to the field,
+		the outher has the responsibility to add a green outline to the button.
+		The outline will be thicker depending on how many items the list contains.
+		We are going to tell them through an event bus.
+	</p>
+	<div>
+		<input data-add-name-to-array-field="" type="text" />
+	</div>
+	<div>
+		<button data-add-name-to-array-button="" class="button">Add it</button>
+	</div>
+	
+
+	<!-- inject:js -->
+	<script src="/js/bld/lib.js"></script>
+	<script src="/js/bld/app.js"></script>
+	<!-- endinject -->
+</body>
+
+</html>
