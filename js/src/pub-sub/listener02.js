@@ -1,8 +1,6 @@
 (function(){
 	
 	var onItemAdded = function(data){
-		console.log("x");
-		
 		switch (data) {
 			case 1:
 				$('[data-add-name-to-array-button]').css('outline', '1px solid yellow');

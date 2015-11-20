@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var stripDebug = require('gulp-strip-debug');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
@@ -26,7 +27,7 @@ var jsAppSrc = [
 	
 	'./js/src/pub-sub/publisher.js',
 	'./js/src/pub-sub/listener01.js',
-	'./js/src/pub-sub/listener02.js',
+	'./js/src/pub-sub/listener02.js'
 ];
 
 var jsLibSrc = [
@@ -70,17 +71,16 @@ var injectToHtml = function () {
 	};
 	
 	injectToIndexView();
-	injectToRestOfviews();			
+	injectToRestOfviews();		
 
 };
-
-
 
 gulp.task('js-app', function () {
 	return gulp
 		.src(jsAppSrc)
 		.pipe(gulpif(!isProduction, sourcemaps.init()))
 		.pipe(concat('app.js'))
+		.pipe(gulpif(isProduction, stripDebug()))
 		.pipe(uglify())
 		.pipe(gulpif(isProduction, rev()))
 		.pipe(gulpif(!isProduction, sourcemaps.write()))
@@ -109,11 +109,9 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest(sassBld));
 });
 
-
 gulp.task('clean-build-folders', function () {
 	del.sync([jsBld, sassBld]);
 });
-
 
 gulp.task('js-app-watcher', function () {
 	gulp.watch(jsAppSrc, ['js-app']);
@@ -122,7 +120,6 @@ gulp.task('js-app-watcher', function () {
 gulp.task('sass-app-watcher', function () {
 	gulp.watch(sassSrcWatch, ['sass']);
 });
-
 
 //
 // Main Tasks
@@ -139,7 +136,5 @@ gulp.task('reset-to-dev', ['clean-build-folders', 'js-app', 'js-lib', 'sass'], f
 	// Then we can keep running the small watch jobs that only keeps overwriting the non revisioned files
 	injectToHtml();
 });
-
-
 
 gulp.task('watch', ['default', 'js-app-watcher', 'sass-app-watcher']);

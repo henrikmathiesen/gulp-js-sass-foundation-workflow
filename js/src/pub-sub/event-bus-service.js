@@ -22,7 +22,6 @@ window.app.eventBusService = function(){
 	
 	// Also called "emit" or "trigger"
 	var publish = function(eventName, data) {
-		console.log(_events);
 		if(_events[eventName]) {
 			_events[eventName].forEach(function(storedCallback){
 				storedCallback(data);
