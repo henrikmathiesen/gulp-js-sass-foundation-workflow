@@ -1,6 +1,6 @@
 (function(){
 	
-	var onItemAdded = function(data){
+	var onItemAdded = function(event, data){
 		switch (data) {
 			case 1:
 				$('[data-add-name-to-array-button]').css('outline', '1px solid yellow');
@@ -17,6 +17,7 @@
 		}
 	};
 	
-	window.app.eventBusService.subscribe('itemAdded', onItemAdded);
+	//window.app.eventBusService.subscribe('itemAdded', onItemAdded);
+	$(document).on('itemAdded', onItemAdded);
 	
 })();
