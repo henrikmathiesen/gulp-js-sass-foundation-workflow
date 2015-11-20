@@ -8,7 +8,7 @@ window.app.eventBusService = function(){
 		_events[eventName].push(callback);
 	};
 	
-	// Also called "off"
+	// Also called "off" (unsubscribing is iffy)
 	var unsubscribe = function(eventName, callback){
 		if(_events[eventName]) {
 			for (var index = 0; index < _events[eventName].length; index++) {

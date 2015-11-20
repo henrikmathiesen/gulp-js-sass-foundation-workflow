@@ -4,7 +4,6 @@
 		switch (data) {
 			case 1:
 				$('[data-add-name-to-array-field]').css('outline', '1px solid red');
-				//window.app.eventBusService.unsubscribe('itemAdded', onItemAdded);
 				break;
 			case 2:
 				$('[data-add-name-to-array-field]').css('outline', '2px solid red');
