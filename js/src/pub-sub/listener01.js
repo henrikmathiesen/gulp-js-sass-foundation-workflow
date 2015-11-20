@@ -1,10 +1,10 @@
 (function(){
 	
-	window.app.eventBusService.subscribe('itemAdded', function(data){
-		
+	var onItemAdded = function(data){
 		switch (data) {
 			case 1:
 				$('[data-add-name-to-array-field]').css('outline', '1px solid red');
+				//window.app.eventBusService.unsubscribe('itemAdded', onItemAdded);
 				break;
 			case 2:
 				$('[data-add-name-to-array-field]').css('outline', '2px solid red');
@@ -16,7 +16,8 @@
 				$('[data-add-name-to-array-field]').css('outline', '4px solid red');
 				break;
 		}
-		
-	});
+	};
+	
+	window.app.eventBusService.subscribe('itemAdded', onItemAdded);
 	
 })();
