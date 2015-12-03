@@ -1,0 +1,34 @@
+.row.gs-fa-fixed-cols {
+	
+	color:$gs-brandcolor-white;
+	max-width: initial;
+	
+	.column {
+		outline:1px solid navy;
+		float: left!important;
+	}
+	
+	.column:first-child {
+		div {
+			background-color: maroon;
+			padding: 30px;
+		}
+		
+		@media screen and (min-width:500px) {
+			width:350px;
+			position: absolute;
+		}
+	}
+	
+	.column:last-child {
+		div {
+			background-color: olive;
+			padding: 30px;
+		}
+		
+		@media screen and (min-width:500px) {
+			width:100%;
+			padding-left: 365px;		// space + 15 padding
+		}
+	}
+}
