@@ -197,6 +197,43 @@
 }
 
 //
+// https://css-tricks.com/equidistant-objects-with-css/ , Mon Villalons response
+
+.gs-evenly-spaced-villalon {
+	width:100%;
+	max-width: rem-calc(1000px);
+	display: table;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	ul {
+		display: table-row;
+		
+		li {
+			display: table-cell;
+			height: 80px;
+			padding-left: 20px;
+			padding-right: 20px;
+			vertical-align: middle;
+			text-align: center;
+			background-color: goldenrod;
+			
+			color:white;
+			text-transform: uppercase;
+			font-weight: bold;
+			
+			cursor:pointer;
+			
+			&:hover {
+				background-color: gold;
+			}
+		}
+	}	
+}
+
+
+//
 //
 //
 // A CONTAINER WITH CENTERED CONTENT ON XY-AXIS (TWO VERSION; FOR < IE11 AND FOR >= IE11)
