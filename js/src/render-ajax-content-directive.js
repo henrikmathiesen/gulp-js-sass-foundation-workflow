@@ -47,14 +47,6 @@
 				break;
 		}
 
-
-		if((cacheType !== "js") || (cacheType !== "")) {
-			
-			// Ajax Content is rendered, no need to fetch and render on subsequent clicks
-			if ($renderContentSelector.children($(cacheType)).length) { return; }
-			
-		}
-
 	});
 
 })();
