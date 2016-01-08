@@ -1,0 +1,41 @@
+.gs-sticky-header-and-footer {
+    
+    // CSS Tricks
+    // https://css-tricks.com/snippets/css/sticky-footer/
+    
+    height: 100%;
+    padding: 0;
+    
+    header {
+        height: 100px;
+        width: 100%;
+        background-color: tomato;
+        position: fixed;
+        top:0;
+        left:0;
+    }
+    
+    .page-wrap {
+        padding-top: 160px;             // header height + intended padding top
+        padding-right: 30px;
+        padding-bottom: 60px;           // intended padding bottom
+        padding-left: 30px;
+        min-height: 100%;
+        margin-bottom: -100px;          // equal to footer height
+    }
+    .page-wrap:after {
+        content: "";
+        display: block;
+    }
+    .site-footer, .page-wrap:after {
+        height: 100px;
+        width: 100%;
+    }
+    .site-footer {
+        background: orange;
+    }
+}
+
+html {
+  height: 100%;
+}
