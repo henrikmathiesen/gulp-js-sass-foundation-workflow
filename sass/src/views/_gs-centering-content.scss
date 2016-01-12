@@ -264,3 +264,22 @@
 		}
 	}
 }
+
+.row.gs-center-content-eq-height {
+    position: relative;
+    
+    .column {
+       @include foundation-column-base-style(); 
+    }
+    
+    .column:first-child {
+        position: absolute;
+        height:100%;
+        padding: 0;
+        
+        .gs-center-content-eq-height-inner {
+            padding: 15px;
+            @include center-xy-with-absolute-and-transform();
+        }
+    }
+}
