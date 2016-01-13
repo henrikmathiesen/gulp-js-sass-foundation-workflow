@@ -1,0 +1,59 @@
+body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.gs-responsive-grids {
+    .gs-responsive-grids-fluid {
+        padding-left: $column-gutter;
+        padding-right: $column-gutter;
+        
+        .column {
+            div {
+                outline:1px dotted gold;
+            }
+        }
+    }
+    
+    .gs-responsive-grids-adaptive {
+        
+        padding-left: $column-gutter;
+        padding-right: $column-gutter;
+        
+        @media #{$medium-only} { 
+            width:$small-breakpoint + em-calc(1);
+        }
+        @media #{$large-only} { 
+            width:$medium-breakpoint + em-calc(1);
+        }
+        @media #{$xlarge-only} { 
+            width:$large-breakpoint + em-calc(1);
+        }
+        @media #{$xxlarge-up} { 
+            width:$xlarge-breakpoint + em-calc(1);
+        }
+        
+        .column {
+            div {
+                outline:1px dotted olive;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// Modified break points calculation
+// $small-range:   (0, $small-breakpoint);											0		-		767
+// $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);			768		-		1023		
+// $large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint);			1024	-		1440
+// $xlarge-range:  ($large-breakpoint  + em-calc(1), $xlarge-breakpoint);			1441	-		1920
+// $xxlarge-range: ($xlarge-breakpoint + em-calc(1), em-calc(99999999));			1921	-		9999
