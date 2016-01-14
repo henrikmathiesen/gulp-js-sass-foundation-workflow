@@ -24,6 +24,7 @@ var jsAppSrc = [
 	'./js/src/truncate-at-char-directive.js',
 	'./js/src/truncate-at-word-directive.js',
 	'./js/src/render-ajax-content-directive.js',
+    './js/src/jquery-timer-tools.js',
 	
 	'./js/src/pub-sub/publisher.js',
 	'./js/src/pub-sub/listener01.js',
