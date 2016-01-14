@@ -35,7 +35,8 @@ var jsLibSrc = [
 	'./bower_components/foundation/js/vendor/fastclick.js',
 	'./bower_components/foundation/js/foundation/foundation.js',
 	'./bower_components/foundation/js/foundation/foundation.equalizer.js',
-	'./bower_components/mustache/mustache.min.js'
+	'./bower_components/mustache/mustache.min.js',
+    './bower_components/jquery.timer-tools/jquery.timer-tools.min.js'
 ];
 
 var sassSrc = './sass/src/app.scss';
