@@ -1,9 +1,7 @@
-body {
+body.gs-responsive-grids {
     padding-left: 0;
     padding-right: 0;
-}
-
-.gs-responsive-grids {
+    
     .gs-responsive-grids-fluid {
         padding-left: $column-gutter;
         padding-right: $column-gutter;
