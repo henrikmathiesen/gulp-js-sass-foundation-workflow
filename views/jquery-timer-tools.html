@@ -16,32 +16,32 @@
     <h1>jQuery Timer Tools</h1>
     <p>
         Throttle and Debounce are handy tools for controlling the intensity of callback functions triggered by events. We have allready
-        looked at debounce in 'mobileScrolling' project, but this time we are going to use a third party library with different
-        tools.
+        looked at debounce in 'mobileScrolling' project, we have also used <a href="http://foundation.zurb.com/sites/docs/v/5.5.3/javascript-utilities.html" target="_blank">Foundations tools (v5) for debounce and throttle</a>,
+        but this time we are going to use a third party library with different tools. <mark>Foundation v5 gives us the same possibilities as lib bellow.</mark>
     </p>
     <h2>jquery.timer-tools</h2>
     <p>
         <a href="https://github.com/lolmaus/jquery.timer-tools" target="_blank">
             https://github.com/lolmaus/jquery.timer-tools (1.2 KB).
         </a>
-    </p>
-    <p>
+        <br>
         Installed via bower (see bower.json).
     </p>
 
-    <br>
     <br>
 
     <h2>Debounce</h2>
     <p>
         Execute a function
         <mark> only one time (even if we continously move mouse, event only fires once)</mark> within a time span specified in milliseconds.
-        <br> There are two variants: 'execute at the begining of the time span' or 'execute at the end of the time span'
+        <br> There are two variants: 'execute at the begining of the time span' or 'execute at the end of the time span'.<br>
+        Debouncing is often used to prevent an action from being performed twice, such as double clicking a submit button.
     </p>
 
     <h2>Throttle</h2>
     <p>
-        Execute a function every n millisecond.
+        Execute a function every n millisecond.<br>
+        Throttling is often used in cases where it’s disadvantageous to trigger a callback every time an event is triggered (during a continuous action), but you still want to trigger a reaction while the event is occurring.
     </p>
     <br>
 
