@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>jQuery Timer Tools</title>
-	<meta name="description" content="JavaScript Build Automation With Gulp and SASS Architecture">
-	<!-- inject:css -->
-	<link rel="stylesheet" href="/sass/bld/app.css">
-	<!-- endinject -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery Timer Tools</title>
+    <meta name="description" content="JavaScript Build Automation With Gulp and SASS Architecture">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/sass/bld/app.css">
+    <!-- endinject -->
 </head>
 
 <body>
-	<h1>jQuery Timer Tools</h1>
+    <h1>jQuery Timer Tools</h1>
     <p>
-        Throttle and Debounce are handy tools for controlling the intensity of callback functions triggered by events.
-        We have allready looked at debounce in 'mobileScrolling' project, but this time we are going to use a
-        third party library with different tools.
+        Throttle and Debounce are handy tools for controlling the intensity of callback functions triggered by events. We have allready
+        looked at debounce in 'mobileScrolling' project, but this time we are going to use a third party library with different
+        tools.
     </p>
     <h2>jquery.timer-tools</h2>
     <p>
@@ -28,12 +28,49 @@
     <p>
         Installed via bower (see bower.json).
     </p>
-	
 
-	<!-- inject:js -->
-	<script src="/js/bld/lib.js"></script>
-	<script src="/js/bld/app.js"></script>
-	<!-- endinject -->
+    <br>
+    <br>
+
+    <h2>Debounce</h2>
+    <p>
+        Execute a function
+        <mark> only one time (even if we continously move mouse, event only fires once)</mark> within a time span specified in milliseconds.
+        <br> There are two variants: 'execute at the begining of the time span' or 'execute at the end of the time span'
+    </p>
+
+    <h2>Throttle</h2>
+    <p>
+        Execute a function every n millisecond.
+    </p>
+    <br>
+
+    <div class="row">
+        <div class="column medium-4">
+            <hr>
+            <h3>$.debounceFirst</h3>
+            <div data-debounce-first=""></div>
+            <hr>
+        </div>
+        <div class="column medium-4">
+            <hr>
+            <h3>$.debounceLast</h3>
+            <div data-debounce-last=""></div>
+            <hr>
+        </div>
+        <div class="column medium-4">
+            <hr>
+            <h3>$.throttle</h3>
+            <div data-throttle=""></div>
+            <hr>
+        </div>
+    </div>
+
+
+    <!-- inject:js -->
+    <script src="/js/bld/lib.js"></script>
+    <script src="/js/bld/app.js"></script>
+    <!-- endinject -->
 </body>
 
 </html>
