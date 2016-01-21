@@ -13,6 +13,7 @@ var argv = require('yargs').argv;
 
 
 var isProduction = (argv.prod) ? (true) : (false);
+var resetinject = (argv.resetinject) ? (true) : (false);
 
 
 var jsAppSrc = [
@@ -83,7 +84,7 @@ gulp.task('js-app', function () {
 		.pipe(gulpif(!isProduction, sourcemaps.init()))
 		.pipe(concat('app.js'))
 		.pipe(gulpif(isProduction, stripDebug()))
-		.pipe(uglify())
+        .pipe(gulpif(isProduction, uglify()))
 		.pipe(gulpif(isProduction, rev()))
 		.pipe(gulpif(!isProduction, sourcemaps.write()))
 		.pipe(gulp.dest(jsBld));
@@ -94,7 +95,7 @@ gulp.task('js-lib', function () {
 		.src(jsLibSrc)
 		.pipe(gulpif(!isProduction, sourcemaps.init()))
 		.pipe(concat('lib.js'))
-		.pipe(uglify())
+		.pipe(gulpif(isProduction, uglify()))
 		.pipe(gulpif(isProduction, rev()))
 		.pipe(gulpif(!isProduction, sourcemaps.write()))
 		.pipe(gulp.dest(jsBld));
@@ -128,14 +129,8 @@ gulp.task('sass-app-watcher', function () {
 
 gulp.task('default', ['clean-build-folders', 'js-app', 'js-lib', 'sass'], function () {
 	// If we are in dev environment we do not revision js and css files, so do not need to modify html file on every build
-	// However this approach leads to having to use the reset job bellow, after a production build, to reset references to non revisioned
-	if(!isProduction) { return; }
-	injectToHtml();
-});
-
-gulp.task('reset-to-dev', ['clean-build-folders', 'js-app', 'js-lib', 'sass'], function () {
-	// If isProduction is false, after a isProduction build, we need to reset html file with non revisioned file references
-	// Then we can keep running the small watch jobs that only keeps overwriting the non revisioned files
+	// However this approach leads to having to use the reset, after a production build, to reset references to non revisioned
+	if (!isProduction && !resetinject) { return; }
 	injectToHtml();
 });
 
