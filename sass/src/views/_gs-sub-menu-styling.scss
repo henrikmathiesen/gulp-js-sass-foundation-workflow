@@ -1,0 +1,47 @@
+.gs-sub-menu-styling {
+    > ul {
+        border-bottom:1px solid olive;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin:0;
+        
+        li {
+            border-top:1px solid olive;
+            a {
+                display: block;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        
+        li.lvl02 {
+            a {
+                padding-left:25px;
+            }
+        }
+        
+        li.lvl03 {
+            a {
+                padding-left:50px;
+            }
+        }
+        
+        li.lvl01.open {
+           li.lvl02 {
+               > a {
+                   background-color: #eee;
+               }
+           }
+        }
+        
+        li.lvl02.open {
+           li.lvl03 {
+               > a {
+                   background-color: #ddd;
+               }
+           }
+        }
+    }
+}
