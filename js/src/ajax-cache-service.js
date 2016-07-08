@@ -1,4 +1,4 @@
-window.app.ajaxCacheService = function(){
+app.ajaxCacheService = function(){
 	
 	var _ajaxCache = [];
 

@@ -17,7 +17,7 @@
 		}
 	};
 	
-	//window.app.eventBusService.subscribe('itemAdded', onItemAdded);
+	//app.eventBusService.subscribe('itemAdded', onItemAdded);
 	$(document).on('itemAdded', onItemAdded);
 	
 })();

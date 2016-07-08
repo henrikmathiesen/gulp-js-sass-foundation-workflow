@@ -8,7 +8,7 @@
 	$button.on('click', function(){
 		if($field.val()) {
 			items.push($field.val());
-			//window.app.eventBusService.publish("itemAdded", items.length);
+			//app.eventBusService.publish("itemAdded", items.length);
 			$(document).trigger('itemAdded', items.length);
 		}
 		else {

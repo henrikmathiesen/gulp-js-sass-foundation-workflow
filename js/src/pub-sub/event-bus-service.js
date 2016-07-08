@@ -1,4 +1,4 @@
-window.app.eventBusService = function(){
+app.eventBusService = function(){
 	
 	var _events = {};
 	

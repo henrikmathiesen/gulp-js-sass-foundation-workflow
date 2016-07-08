@@ -15,13 +15,13 @@
 					$renderContentSelector.html(Mustache.render(mustacheTemplate, data[0]));
 					
 					if(shouldPushToCache) {
-						window.app.ajaxCacheService.pushToCache(ajaxCachingCheckJsId, data[0]);
+						app.ajaxCacheService.pushToCache(ajaxCachingCheckJsId, data[0]);
 					}
 				});	
 		};
 		
 		var ajaxCachingCheckJs = function(){
-			var itemFromCache = window.app.ajaxCacheService.pullFromCache(ajaxCachingCheckJsId);
+			var itemFromCache = app.ajaxCacheService.pullFromCache(ajaxCachingCheckJsId);
 			
 			if(itemFromCache) {
 				$renderContentSelector.html(Mustache.render(mustacheTemplate, itemFromCache));
