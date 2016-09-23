@@ -33,8 +33,9 @@
             console.log("ERROR cutting text: " + error);
         }
 
+        // cut throws an exception, but still works
+        // Browser support: IE 10+, Chrome 43+, Firefox 41+, and Opera 29+ support these commands. Not Safari.
+
     });
-
-
 
 })();
