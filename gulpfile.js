@@ -26,7 +26,7 @@ var jsAppSrc = [
 	'./js/src/truncate-at-word-directive.js',
 	'./js/src/render-ajax-content-directive.js',
     './js/src/jquery-timer-tools.js',
-	
+	'./js/src/cut-and-copy-command.js',
 	'./js/src/pub-sub/publisher.js',
 	'./js/src/pub-sub/listener01.js',
 	'./js/src/pub-sub/listener02.js'
