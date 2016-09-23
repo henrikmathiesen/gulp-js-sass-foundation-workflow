@@ -17,12 +17,20 @@
 
     <p>We are going to look at how we can cut and copy programmatically. Following <a href="https://developers.google.com/web/updates/2015/04/cut-and-copy-commands">this guide</a>.</p>
 
-	<div>
+	<div class="margin-bottom-md">
 		<div>
-			<mark data-copy-text="">Copy me</mark>
+			<mark gs-copy-text="">Copy me</mark>
 		</div>
 		<div>
-			<a href="#" data-click-to-copy="" copy-selector="[data-copy-text]">Click to copy</a>
+			<a href="#" gs-click-to-copy="" gs-target="[gs-copy-text]">Click to copy</a>
+		</div>
+	</div>
+	<div>
+		<div>
+			<textarea gs-copy-textarea="">This is an area of text, yeah</textarea>
+		</div>
+		<div>
+			<a href="#" gs-click-to-cut="" gs-target="[gs-copy-textarea]">Click to cut</a>
 		</div>
 	</div>
 
