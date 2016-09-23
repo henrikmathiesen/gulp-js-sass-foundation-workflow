@@ -1,6 +1,17 @@
 (function () {
 
-    $('[gs-click-to-copy]').on('click', function (e) {
+    var $copyDirective = $('[gs-click-to-copy]');
+    var $cutDirective = $('[gs-click-to-cut]');  
+
+    if(!document.queryCommandSupported('copy')) {
+        $copyDirective.css('display', 'none');    
+    }
+
+    if(!document.queryCommandSupported('cut')) {
+        $cutDirective.css('display', 'none');    
+    }
+
+    $copyDirective.on('click', function (e) {
         e.preventDefault();
 
         var $selectorToCopy = $($(e.target).attr('gs-target'));
@@ -20,7 +31,7 @@
         window.getSelection().removeAllRanges();
     });
 
-    $('[gs-click-to-cut]').on('click', function (e) {
+    $cutDirective.on('click', function (e) {
         e.preventDefault();
 
         var $selectorToCopy = $($(e.target).attr('gs-target'));
