@@ -1,0 +1,9 @@
+.gs-css-shapes-01 {
+
+    img {
+        float:left;
+        shape-outside: url('/images/green-circle-cut.png');
+        shape-image-threshold: 0.5;
+    }
+
+}
