@@ -1,5 +1,5 @@
 {
-  "name": "jSBuildWithGulpAndSassArchitecture",
+  "name": "gulp-js-sass-foundation-workflow",
   "version": "0.0.0",
   "authors": [
     "Henrik <henrik_mathiesen@hotmail.com>"
@@ -13,9 +13,9 @@
     "tests"
   ],
   "dependencies": {
-    "foundation": "~5.5.2",
-    "fontawesome": "~4.3.0",
-    "mustache": "~2.2.0",
-    "jquery.timer-tools": "~0.1.0"
+    "foundation": "5.5.2",
+    "fontawesome": "4.3.0",
+    "mustache": "2.2.0",
+    "jquery.timer-tools": "0.1.0"
   }
 }
