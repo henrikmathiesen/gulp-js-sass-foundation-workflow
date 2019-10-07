@@ -1,6 +1,8 @@
 (function () {
 	
 	// It is easier logic, and easier to read for the user, if we truncate by words instead
+	// See truncate-at-word.directive.js
+	// Also see ^ for CSS implementation
 
 	$('[data-truncate-at-char]').each(function (index, element) {
 		var cap = parseInt($(element).attr('data-truncate-at-char'));
@@ -14,7 +16,6 @@
 		text = text.slice(0, cap);
 		
 		// Remove any delimiter characters from last character (last character will have three dots)
-		//
 		var textEndsInDot = text.charAt(cap - 1) === ".";
 		var textEndsInComma = text.charAt(cap - 1) === ",";
 		var textEndsInExpoint = text.charAt(cap - 1) === "!";

@@ -32,4 +32,20 @@
 
 	});
 
+	/* 
+	
+		Can also do it with CSS
+
+		<span class="overflow-ellipsis">Lorem ipsum dolores es sita met</span>
+
+		.overflow-ellipsis {
+			display: block;
+    		overflow: hidden;
+    		text-overflow: ellipsis;
+    		white-space: nowrap;
+    		word-wrap: normal;
+		}
+	
+	*/
+
 })();
